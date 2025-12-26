@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body>
+    <header><nav>
+        <a href="{{ url_for('index') }}">POS</a>
+        <a href="{{ url_for('products') }}">Inventory</a>
+        <a href="{{ url_for('customers') }}">Customers</a>
+        <a href="{{ url_for('analysis') }}">Analysis</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav></header>
+    <main>{% with m=get_flashed_messages(with_categories=true) %}{% if m %}{% for c,msg in m %}<p class="{{c}}">{{msg}}</p>{% endfor %}{% endif %}{% endwith %}{% block content %}{% endblock %}</main>
+</body>
+</html>

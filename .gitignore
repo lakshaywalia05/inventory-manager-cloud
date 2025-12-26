@@ -1,0 +1,35 @@
+# --- Python & Flask ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+instance/
+.pytest_cache/
+
+# --- Database (Local) ---
+# We ignore these so local test data isn't uploaded
+*.db
+*.sqlite3
+database.db
+app/database.db
+
+# --- Terraform ---
+# vital to ignore state files containing sensitive infra data
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+
+# --- IDE & OS System Files ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Build / PyInstaller (Cleanup) ---
+build/
+dist/
+*.spec

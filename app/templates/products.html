@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Inventory{% endblock %}
+{% block content %}
+<h1>📦 Inventory</h1>
+<a href="{{ url_for('add_product') }}">+ Add Product</a>
+<table>
+    <tr><th>Image</th><th>Name</th><th>Price</th><th>Stock</th><th>Actions</th></tr>
+    {% for product in products %}
+    <tr>
+        <td>{% if product.image_path %}<img src="{{ product.image_path }}" width="40">{% endif %}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.stock }}</td>
+        <td><a href="{{ url_for('edit_product', product_id=product.id) }}">Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

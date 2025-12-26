@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<form method="POST" enctype="multipart/form-data">
+    <label>Name:</label><input type="text" name="name" value="{{ product.name if product else '' }}" required>
+    <label>Price:</label><input type="number" name="price" step="0.01" value="{{ product.price if product else 0 }}" required>
+    <label>Stock:</label><input type="number" name="stock" value="{{ product.stock if product else 0 }}" required>
+    <label>Photo:</label><input type="file" name="photo">
+    {% if product and product.image_path %}<img src="{{ product.image_path }}" width="100">{% endif %}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

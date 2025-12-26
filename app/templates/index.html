@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>New Sale</h1>
+<div class="pos-layout">
+    <div class="products">
+        {% for p in products %}
+        <div onclick="addToCart(this)" data-id="{{p.id}}" data-name="{{p.name}}" data-price="{{p.price}}">
+            <b>{{p.name}}</b><br>{{p.price|currency}}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="cart">
+        <button onclick="checkout('Cash')">Cash</button>
+        <button onclick="checkout('Card')">Card</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/pos.js') }}"></script>
+{% endblock %}
