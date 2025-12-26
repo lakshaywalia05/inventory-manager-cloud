@@ -146,3 +146,4 @@ docker run -p 5000:5000 \
     TF --> MAIN[main.tf]
     TF --> DB[database.tf]
     TF --> PROVIDERS[providers.tf]
+<img width="2816" height="1536" alt="demo" src="https://github.com/user-attachments/assets/5bd502e5-18c5-4451-b533-cdbaf33087cb" />
